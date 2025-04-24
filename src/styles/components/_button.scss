@@ -1,0 +1,90 @@
+@use "../base/variables" as v;
+@use "../base/animations" as *;
+
+@mixin button() {
+  .form__button {
+    position: relative;
+    padding: 10px 22px;
+    font-family: v.$font-family-primary;
+    font-weight: v.$font-weight-bold;
+    font-size: v.$font-size-small;
+    color: v.$color-text-primary;
+    background-color: v.$background-btn-yellow-primary;
+    width: 8rem;
+    border-radius: 12px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:active {
+      transform: scale(0.96);
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      width: 150%;
+      left: 50%;
+      height: 100%;
+      transform: translateX(-50%);
+      z-index: 1;
+      background-repeat: no-repeat;
+    }
+
+    &:hover::before {
+      top: -70%;
+      background-image: radial-gradient(
+          circle,
+          v.$yellow-color-secondary 20%,
+          transparent 20%
+        ),
+        radial-gradient(
+          circle,
+          transparent 20%,
+          v.$yellow-color-secondary 20%,
+          transparent 30%
+        ),
+        radial-gradient(circle, v.$yellow-color-secondary 20%, transparent 20%),
+        radial-gradient(circle, v.$yellow-color-secondary 20%, transparent 20%),
+        radial-gradient(
+          circle,
+          transparent 10%,
+          v.$yellow-color-secondary 15%,
+          transparent 20%
+        ),
+        radial-gradient(circle, v.$yellow-color-secondary 20%, transparent 20%),
+        radial-gradient(circle, v.$yellow-color-secondary 20%, transparent 20%),
+        radial-gradient(circle, v.$yellow-color-secondary 20%, transparent 20%),
+        radial-gradient(circle, v.$yellow-color-secondary 20%, transparent 20%);
+      background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%,
+        15% 15%, 10% 10%, 18% 18%;
+      background-position: 50% 120%;
+      animation: greentopBubbles 0.6s ease;
+    }
+
+    &:hover::after {
+      bottom: -70%;
+      background-image: radial-gradient(
+          circle,
+          v.$yellow-color-secondary 20%,
+          transparent 20%
+        ),
+        radial-gradient(circle, v.$yellow-color-secondary 20%, transparent 20%),
+        radial-gradient(
+          circle,
+          transparent 10%,
+          v.$yellow-color-secondary 15%,
+          transparent 20%
+        ),
+        radial-gradient(circle, v.$yellow-color-secondary 20%, transparent 20%),
+        radial-gradient(circle, v.$yellow-color-secondary 20%, transparent 20%),
+        radial-gradient(circle, v.$yellow-color-secondary 20%, transparent 20%),
+        radial-gradient(circle, v.$yellow-color-secondary 20%, transparent 20%);
+      background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%,
+        18% 18%;
+      background-position: 50% 0%;
+      animation: greenbottomBubbles 0.6s ease;
+    }
+  }
+}

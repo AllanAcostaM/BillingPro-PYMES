@@ -1,0 +1,11 @@
+@use '../components/labelModules' as lm;
+@use '../components/inputModules' as im;
+@use '../components/button' as b;
+@use '../components//error' as e;
+
+@mixin formModules() {
+  @include lm.labelModule();
+  @include im.inputModule();
+  @include b.button();
+  @include e.error();
+}

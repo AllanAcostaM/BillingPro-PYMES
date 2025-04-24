@@ -1,0 +1,109 @@
+@use "../../base/variables" as *;
+
+.dashboard {
+  // Header
+
+  &__recent-payments {
+    background-color: $yellow-color-primary;
+    border-radius: $border-radius-small;
+    padding: 1rem;
+    animation-duration: 2s;
+    animation-delay: 2.5s;
+
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    &-title {
+      font-size: $font-size-body;
+      font-family: $font-family-primary;
+      font-weight: $font-weight-bold;
+      color: $color-text-tertiary;
+    }
+
+    &-button {
+      font-family: $font-family-primary;
+      background-color: $black-color-primary;
+      color: $button-tertiary-color-text;
+      font-size: $font-size-small;
+      border-radius: $border-radius-large;
+      font-weight: $font-weight-medium;
+      padding: 0.5rem 1.2rem;
+      cursor: pointer;
+      transition: 0.2s;
+      animation-duration: 2s;
+      animation-delay: 2.5s;
+
+      &:hover {
+        color: $yellow-color-primary;
+        transform: translate(-0.25rem, -0.25rem);
+        box-shadow: 0.25rem 0.25rem $yellow-color-tertiary;
+      }
+    }
+
+    &-item {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 3rem 17rem 12rem 9rem 9rem;
+      gap: 1.2rem;
+      padding: 0.8rem;
+      border-radius: $border-radius-small;
+      cursor: pointer;
+      transition: background-color 0.2s;
+
+      &:hover {
+        background-color: $yellow-color-quinary;
+      }
+
+      &-img {
+        width: 3rem;
+        height: 3rem;
+        object-fit: cover;
+        border-radius: 0.5rem;
+      }
+
+      &-name {
+        font-family: $font-family-primary;
+        font-size: $font-size-body;
+        font-weight: $font-weight-medium;
+        color: $color-text-tertiary;
+      }
+
+      &-amount {
+        font-family: $font-family-primary;
+        font-size: $font-size-small;
+        font-weight: $font-weight-bold;
+        color: $color-text-tertiary;
+        text-align: left;
+      }
+
+      &-amount {
+        font-family: $font-family-primary;
+        font-size: $font-size-small;
+        font-weight: $font-weight-bold;
+        color: $color-text-tertiary;
+      }
+
+      &-icon-wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &-icon {
+        font-size: 1rem;
+        color: $black-color-primary;
+      }
+
+      &-time {
+        font-family: $font-family-primary;
+        font-size: $font-size-small;
+        color: $color-text-secondary;
+        text-align: right;
+      }
+    }
+  }
+}

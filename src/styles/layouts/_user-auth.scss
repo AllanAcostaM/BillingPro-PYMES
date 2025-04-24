@@ -1,0 +1,118 @@
+@use '../base/variables';
+
+.auth {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+
+}
+
+.auth__header,
+.auth__form,
+.auth__footer {
+  padding: 1rem;
+  grid-column: 1 / 2;
+  background: variables.$background-black-main;
+}
+
+.auth__header {
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &-content {
+    padding: 1.2rem 7rem 0 0;
+    text-align: left;
+    animation-duration: 2.5s;
+    animation-delay: 1s;
+  }
+
+  &-title {
+      color: variables.$color-text-quaternary;
+      font-family: variables.$font-family-primary;
+      font-size: variables.$font-size-h2;
+      font-weight: variables.$font-weight-bold;
+      margin-bottom: .1rem;
+
+    }
+
+  &-subtitle {
+      position: relative;
+      font-family: variables.$font-family-primary;
+      font-size: variables.$font-size-small;
+      color: variables.$color-text-tertiary;
+      font-weight: variables.$font-weight-regular;
+
+
+    &::after {
+      content: '';
+      display: block;
+      width: 120%;
+      margin: 0.5rem 0 0 0;
+      border-bottom: 1px solid variables.$yellow-color-primary;
+    }
+  }
+}
+
+.auth__form {
+  grid-row: 2;
+}
+
+.auth__footer {
+  grid-row: 3;
+  text-align: center;
+
+p {
+  font-family: variables.$font-family-primary;
+  font-size: variables.$font-size-small;
+  color: variables.$color-text-tertiary;
+  font-weight: variables.$font-weight-regular;
+  animation-duration: 2.5s;
+  animation-delay: 1s;
+
+  }
+}
+
+.auth__logo-wrapper {
+  grid-row: 1 / 4;
+  background-color: variables.$background-black-main;
+  position: relative;
+}
+
+.auth__logo-section {
+  grid-row: 1 / 4;
+  position: relative;
+  background-color: variables.$background-yellow-pre-login;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-bottom-left-radius: 9rem;
+  padding-left: 3rem;
+  height: 100%;
+}
+
+  .auth__logo {
+    max-width: 500px;
+    width: 400px;
+    height: 350px;
+    margin-bottom: 1rem;
+  }
+
+  span {
+    animation-duration: 2s;
+    animation-delay: 1s;
+  }
+
+  .auth__logo-title {
+    color: variables.$color-text-primary;
+    font-family: variables.$font-family-secondary;
+    font-size: variables.$font-size-h2;
+    font-weight: variables.$font-weight-bold;
+    animation-duration: 2s;
+    animation-delay: 1s;
+  }
+
+

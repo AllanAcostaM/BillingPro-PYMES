@@ -1,0 +1,107 @@
+@use "../base/variables" as *;
+
+.modules {
+  &__header {
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem 2rem;
+
+    &-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &-texts {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+
+      .modules__crumbs {
+        color: $color-text-tertiary;
+        font-family: $font-family-primary;
+        font-weight: $font-weight-medium;
+        font-size: $font-size-small;
+        margin: 0;
+        animation-duration: 2s;
+        animation-delay: 1s;
+      }
+
+      .modules__main-title {
+        color: $color-text-quaternary;
+        font-family: $font-family-primary;
+        font-weight: $font-weight-bold;
+        font-size: $font-size-h3;
+        margin: 0;
+        animation-duration: 2s;
+        animation-delay: 1s;
+      }
+
+      .modules__branch {
+        color: $color-text-septenary;
+        font-family: $font-family-primary;
+        font-weight: $font-weight-bold;
+        font-size: $font-size-small;
+        margin: 0;
+        animation-duration: 2s;
+        animation-delay: 1s;
+      }
+    }
+  }
+
+  &__search {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1rem;
+    animation-duration: 2s;
+    animation-delay: 1s;
+
+    &-outer {
+      position: relative;
+      display: block;
+      padding: 0 3.5rem 0 0;
+      border: 9px solid $yellow-color-primary;
+      background-color: $yellow-color-primary;
+      border-radius: 50px;
+    }
+
+    &-inner {
+      display: flex;
+      align-items: center;
+      background-color: $yellow-color-quinary;
+      border-radius: 40px;
+      padding: 0.3rem 4rem 0.3rem 0.3rem;
+      position: relative;
+    }
+
+    &-icon {
+      margin-right: 0.5rem;
+      color: $black-color-primary;
+    }
+
+    &-input {
+      border: none;
+      background: transparent;
+      outline: none;
+      color: $color-text-primary;
+      font-size: $font-size-body;
+      font-family: $font-family-primary;
+      font-weight: $font-weight-regular;
+
+      &::placeholder {
+        color: $color-text-primary;
+      }
+    }
+
+    &-image {
+      position: absolute;
+      top: 48%;
+      right: 0.7rem;
+      transform: translateY(-50%);
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+    }
+  }
+}

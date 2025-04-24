@@ -1,0 +1,181 @@
+@use '../../../styles/base/variables' as *;
+@use '../../../styles/base/animations' as *;
+
+.main-layout {
+  display: grid;
+  grid-template-columns: 25% 75%;
+  min-height: 100vh;
+  z-index: 0;
+
+  &__sidebar {
+    background-color: $background-black-main;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+  }
+
+  &__sidebar-header {
+    padding: 0.3rem 0 0.5rem;
+    text-align: center;
+
+    .main-layout__logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      &-img {
+        width: 70px;
+        margin-bottom: 0.5rem;
+        animation-duration: 2.5s;
+      }
+
+      &-title {
+        font-size: 1.2rem;
+        color: $color-text-quaternary;
+        font-family: $font-family-secondary;
+        margin-right: 2.3rem;
+        animation-delay: 1s;
+        animation-duration: 2s;
+      }
+    }
+
+    .main-layout__divider {
+      border: 0;
+      border-top: 0.5px solid $yellow-color-primary;
+      margin: 0 auto;
+      width: 100%;
+    }
+  }
+
+  &__nav {
+    padding: 2.6rem 0;
+
+    &-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      .main-layout__nav-item {
+        position: relative;
+        margin-bottom: 0.6rem;
+
+        .main-layout__nav-link {
+          display: flex;
+          align-items: center;
+          width: 100%;
+          padding: 0.7rem 0.7rem;
+          padding-left: 3.5rem;
+          background: transparent;
+          border: none;
+          color: $yellow-color-quaternary;
+          font-family: $font-family-primary;
+          font-size: $font-size-body;
+          text-align: left;
+          cursor: pointer;
+          transition: background 0.2s;
+
+          mat-icon {
+            margin-right: 1rem;
+            animation-duration: 2s;
+            animation-delay: 1s;
+          }
+        }
+
+        &--active {
+          &::after {
+            content: "";
+            position: absolute;
+            top: 0.3rem;
+            bottom: 0.3rem;
+            right: 0;
+            width: 6px;
+            background-color: $yellow-color-secondary;
+            border-radius: 9999px;
+          }
+
+          .main-layout__nav-link {
+            mat-icon {
+              color: $yellow-color-secondary;
+            }
+            span {
+              color: $yellow-color-primary;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__sidebar-footer {
+    padding: 2rem;
+    text-align: center;
+
+    .main-layout__logout {
+      position: relative;
+      padding: 10px 22px;
+      font-family: $font-family-primary;
+      font-weight: $font-weight-bold;
+      font-size: $font-size-small;
+      color: $color-text-primary;
+      background-image: linear-gradient(to right top, #fbf4df, #f8e8bd, #f5dc9b, #f2d079, #efc356);
+      width: 11rem;
+      border-radius: 12px;
+      border: none;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      animation-duration: 2s;
+      animation-delay: 1s;
+
+      &:active {
+        transform: scale(0.96);
+      }
+
+      &::before,
+      &::after {
+        position: absolute;
+        content: "";
+        width: 150%;
+        left: 50%;
+        height: 100%;
+        transform: translateX(-50%);
+        z-index: 1;
+        background-repeat: no-repeat;
+      }
+      &:hover::before {
+        top: -70%;
+        background-image: radial-gradient(circle, $yellow-color-secondary 20%, transparent 20%),
+          radial-gradient(circle, transparent 20%, $yellow-color-secondary 20%, transparent 30%),
+          radial-gradient(circle, $yellow-color-secondary 20%, transparent 20%),
+          radial-gradient(circle, $yellow-color-secondary 20%, transparent 20%),
+          radial-gradient(circle, transparent 10%, $yellow-color-secondary 15%, transparent 20%),
+          radial-gradient(circle, $yellow-color-secondary 20%, transparent 20%),
+          radial-gradient(circle, $yellow-color-secondary 20%, transparent 20%),
+          radial-gradient(circle, $yellow-color-secondary 20%, transparent 20%),
+          radial-gradient(circle, $yellow-color-secondary 20%, transparent 20%);
+        background-size: 10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+        background-position: 50% 120%;
+        animation: greentopBubbles 0.6s ease;
+      }
+
+      &:hover::after {
+        bottom: -70%;
+        background-image: radial-gradient(circle, $yellow-color-primary 20%, transparent 20%),
+          radial-gradient(circle, $yellow-color-primary 20%, transparent 20%),
+          radial-gradient(circle, transparent 10%, $yellow-color-primary 15%, transparent 20%),
+          radial-gradient(circle, $yellow-color-primary 20%, transparent 20%),
+          radial-gradient(circle, $yellow-color-primary 20%, transparent 20%),
+          radial-gradient(circle, $yellow-color-primary 20%, transparent 20%),
+          radial-gradient(circle, $yellow-color-primary 20%, transparent 20%);
+        background-size: 15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 20% 20%, 18% 18%;
+        background-position: 50% 0%;
+        animation: greenbottomBubbles 0.6s ease;
+      }
+
+    }
+  }
+
+  &__content {
+    background-color: #333333f2;
+    padding: 1rem;
+  }
+}
+

@@ -1,0 +1,17 @@
+// base
+@use "base/reset";
+@use "base/mixins";
+@use "base/animations";
+
+// Components
+@use "components/formAuth";
+@use "components/formModules";
+
+// layout
+@use "layouts/user-auth";
+
+// Pages
+@use "pages/pre-login.scss";
+
+// Animate.css
+@import "animate.css";

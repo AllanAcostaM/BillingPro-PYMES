@@ -1,0 +1,133 @@
+@use "../../../styles/base/variables" as *;
+@use "../../components/formModules" as fm;
+.generate-bill {
+  &__main {
+    padding: 2rem;
+  }
+
+  &__calculate-bill {
+    background-color: $yellow-color-primary;
+    border-radius: $border-radius-small;
+    padding: 1.5rem;
+    animation-duration: 2s;
+    animation-delay: 1.5s;
+
+    &-header {
+      margin-bottom: 0.5rem;
+    }
+
+    &-title {
+      font-family: $font-family-primary;
+      font-size: 1.5rem;
+      font-weight: $font-weight-bold;
+      color: $color-text-tertiary;
+    }
+  }
+
+  &__form {
+    @include fm.formModules();
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    &-group {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    &-row {
+      display: flex;
+      gap: 1rem;
+
+      .generate-bill__form-group--half {
+        flex: 1;
+      }
+    }
+
+    .form__field--with-icon {
+      position: relative;
+
+      .form__input {
+        width: 100%;
+        padding-right: 2.5rem;
+      }
+
+      .form__icon {
+        position: absolute;
+        right: 0.75rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 1.2rem;
+        color: $black-color-primary;
+        cursor: pointer;
+      }
+    }
+
+    &-actions {
+      display: flex;
+      justify-content: flex-end;
+      margin-top: 1rem;
+
+      .form__button {
+        animation-duration: 2s;
+        animation-delay: 1.5s;
+      }
+    }
+
+    input[type="number"] {
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+      }
+    }
+
+    input[type="date"]::-webkit-calendar-picker-indicator {
+      display: none;
+    }
+  }
+}
+
+// Styles - Datepicker
+::ng-deep .custom-datepicker-panel {
+  background-color: $yellow-color-primary;
+  border-radius: $border-radius-small;
+  box-shadow: 0 4px 8px rgba(166, 166, 166, 0.793);
+  padding: 0.5rem;
+
+  .mat-calendar-header {
+    background-color: $yellow-color-secondary;
+    color: $color-text-primary;
+    font-family: $font-family-primary;
+    font-size: $font-size-body;
+    font-weight: $font-weight-medium;
+    border-radius: $border-radius-small;
+    padding: 10px;
+  }
+
+  .mat-calendar-body-selected {
+    background-color: $yellow-color-tertiary;
+  }
+
+  .mat-calendar-table-header th {
+    color: $color-text-tertiary;
+    font-family: $font-family-primary;
+    font-size: $font-size-small;
+    font-weight: $font-weight-bold;
+    padding: 0.3rem;
+  }
+
+  .mat-calendar-body-cell {
+    font-family: $font-family-primary;
+    font-size: $font-size-small;
+    font-weight: $font-weight-regular;
+    color: $color-text-primary;
+  }
+
+  .mat-calendar-body-label {
+    font-family: $font-family-primary;
+    font-weight: $font-weight-medium;
+    color: $color-text-primary;
+  }
+}

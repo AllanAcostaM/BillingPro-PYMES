@@ -1,0 +1,200 @@
+<header class="modules__header">
+  <div class="modules__header-top">
+    <!-- Header Add User -->
+    <div class="modules__header-texts">
+      <!-- 1) Pages / modules -->
+      <p class="modules__crumbs" appAnimateOnScroll="animate__fadeIn">
+        Pages / Manage User
+      </p>
+
+      <!-- 2) Main Dashboard -->
+      <h3 class="modules__main-title" appAnimateOnScroll="animate__fadeIn">
+        Manage User
+      </h3>
+
+      <!-- 3) Lalitpur Branch -->
+      <p class="modules__branch" appAnimateOnScroll="animate__fadeIn">
+        Lalitpur Branch
+      </p>
+    </div>
+
+    <!-- Search bar -->
+    <div class="modules__search" appAnimateOnScroll>
+      <div class="modules__search-outer">
+        <div class="modules__search-inner">
+          <mat-icon class="modules__search-icon" aria-hidden="true"
+            >search</mat-icon
+          >
+          <input
+            type="text"
+            class="modules__search-input"
+            placeholder="Search"
+          />
+        </div>
+        <img
+          src="../../../assets/images/profile.png"
+          alt="Search Avatar"
+          class="modules__search-image"
+        />
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Content Main Add User -->
+<main class="manage-user__main">
+  <section class="manage-user__add-user" appAnimateOnScroll="animate__fadeIn">
+    <!-- Header -->
+    <div class="manage-user__add-user-header">
+      <p class="manage-user__add-user-title">Add User</p>
+    </div>
+
+    <!-- Form -->
+    <form
+      class="manage-user__form formModules"
+      [formGroup]="form"
+      (ngSubmit)="submitForm()"
+    >
+      <!-- SCNO -->
+      <div class="manage-user__form-group">
+        <label class="form__label" for="scno">SCNO.</label>
+        <div class="form__field--with-icon">
+          <input
+            id="scno"
+            type="number"
+            class="form__input"
+            placeholder="Enter SCNO"
+            autocomplete="off"
+            formControlName="scno"
+            [ngClass]="{ input_error: isFieldInvalid('scno') }"
+          />
+        </div>
+        <div *ngIf="hasError('scno', 'required')" class="error">
+          SCNO is required.
+        </div>
+      </div>
+
+      <!-- Full Name -->
+      <div class="manage-user__form-group">
+        <label class="form__label" for="fullName">Full Name</label>
+        <div class="form__field--with-icon">
+          <input
+            id="fullName"
+            type="text"
+            class="form__input"
+            placeholder="Enter full name"
+            autocomplete="off"
+            formControlName="fullName"
+            [ngClass]="{ input_error: isFieldInvalid('fullName') }"
+          />
+        </div>
+        <div *ngIf="hasError('fullName', 'required')" class="error">
+          Full name is required.
+        </div>
+      </div>
+
+      <!-- Address & Phone No (side by side) -->
+      <div class="manage-user__form-row">
+        <div class="manage-user__form-group--half">
+          <label class="form__label" for="address">Address</label>
+          <div class="form__field--with-icon">
+            <input
+              id="address"
+              type="text"
+              class="form__input"
+              placeholder="Enter address"
+              autocomplete="off"
+              formControlName="address"
+              [ngClass]="{ input_error: isFieldInvalid('address') }"
+            />
+            <mat-icon aria-hidden="true" class="form__icon">place</mat-icon>
+          </div>
+          <div *ngIf="hasError('address', 'required')" class="error">
+            Address is required.
+          </div>
+        </div>
+
+        <div class="manage-user__form-group--half">
+          <label class="form__label" for="phone">Phone No.</label>
+          <div class="form__field--with-icon">
+            <input
+              id="phone"
+              type="number"
+              class="form__input"
+              placeholder="Enter phone number"
+              autocomplete="off"
+              formControlName="phone"
+              [ngClass]="{ input_error: isFieldInvalid('phone') }"
+            />
+            <mat-icon aria-hidden="true" class="form__icon">phone</mat-icon>
+          </div>
+          <div *ngIf="hasError('phone', 'required')" class="error">
+            Phone number is required.
+          </div>
+        </div>
+      </div>
+
+      <!-- Email -->
+      <div class="manage-user__form-group">
+        <label class="form__label" for="email">Email</label>
+        <div class="form__field--with-icon">
+          <input
+            id="email"
+            type="email"
+            class="form__input"
+            placeholder="Enter email"
+            autocomplete="off"
+            formControlName="email"
+            [ngClass]="{ input_error: isFieldInvalid('email') }"
+          />
+          <mat-icon aria-hidden="true" class="form__icon">mail</mat-icon>
+        </div>
+        <div *ngIf="hasError('email', 'required')" class="error">
+          Email is required.
+        </div>
+        <div *ngIf="hasError('email', 'email')" class="error">
+          Invalid email format.
+        </div>
+      </div>
+
+      <!-- Password -->
+      <div class="manage-user__form-group">
+        <label class="form__label" for="password">Password</label>
+        <div class="form__field--with-icon">
+          <input
+            id="password"
+            [type]="passwordVisible ? 'text' : 'password'"
+            class="form__input"
+            placeholder="Enter password"
+            autocomplete="off"
+            formControlName="password"
+            [ngClass]="{ input_error: isFieldInvalid('password') }"
+          />
+          <button
+            type="button"
+            class="form__icon-btn"
+            (click)="togglePassword()"
+            [attr.aria-pressed]="passwordVisible"
+          >
+            <mat-icon class="form__icon">
+              {{ passwordVisible ? "visibility" : "visibility_off" }}
+            </mat-icon>
+          </button>
+        </div>
+        <div *ngIf="hasError('password', 'required')" class="error">
+          Password is required.
+        </div>
+        <div *ngIf="hasError('password', 'minlength')" class="error">
+          Minimum 6 characters.
+        </div>
+      </div>
+
+      <!-- Submit Button -->
+      <div class="manage-user__form-actions">
+        <button appAnimateOnScroll type="submit" class="form__button">
+          Add
+        </button>
+      </div>
+    </form>
+  </section>
+</main>

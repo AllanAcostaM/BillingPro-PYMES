@@ -1,0 +1,35 @@
+@use "../../../styles/layouts/user-auth";
+@use "../../../styles/base/variables" as *;
+
+.auth--signup {
+  .form--signup {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 3.4rem;
+    width: 100%;
+    max-width: 35rem;
+    margin: 0 auto;
+    margin-top: -1rem;
+
+    .form__group {
+      width: calc(50% - 1.8rem);
+      animation-duration: 2s;
+      animation-delay: 1s;
+    }
+
+    .form__group--full,
+    .form__group--checkbox,
+    .form__group--button {
+      width: 100%;
+    }
+
+    .form__input,
+    .form__select {
+      width: 100%;
+    }
+
+    .form__group--checkbox {
+      margin-top: 1.2rem;
+    }
+  }
+}

@@ -1,0 +1,113 @@
+<div class="main-layout">
+  <!-- Sidebar -->
+  <aside class="main-layout__sidebar">
+    <!-- Header - Sidebar -->
+    <header
+      class="main-layout__sidebar-header"
+      appAnimateOnScroll="animate__fadeIn"
+    >
+      <div class="main-layout__logo">
+        <img
+          appAnimateOnScroll
+          src="assets/icons/BillingLogo.svg"
+          alt="BillingPro Logo"
+          class="main-layout__logo-img"
+        />
+        <h2 class="main-layout__logo-title" appAnimateOnScroll>
+          BillingPro PYMES
+        </h2>
+      </div>
+      <hr class="main-layout__divider" />
+    </header>
+
+    <!-- Navegation - Sidebar -->
+    <nav class="main-layout__nav">
+      <ul class="main-layout__nav-list">
+        <li
+          class="main-layout__nav-item"
+          routerLinkActive="main-layout__nav-item--active"
+        >
+          <button class="main-layout__nav-link" [routerLink]="['/dashboard']">
+            <mat-icon
+              appAnimateOnScroll
+              fontIcon="home"
+              aria-hidden="true"
+            ></mat-icon>
+            <span appAnimateOnScroll="animate__fadeIn">Dashboard</span>
+          </button>
+        </li>
+        <li
+          class="main-layout__nav-item"
+          routerLinkActive="main-layout__nav-item--active"
+        >
+          <button class="main-layout__nav-link" [routerLink]="['/reports']">
+            <mat-icon
+              appAnimateOnScroll
+              fontIcon="bar_chart"
+              aria-hidden="true"
+            ></mat-icon>
+            <span appAnimateOnScroll="animate__fadeIn">Reports</span>
+          </button>
+        </li>
+        <li
+          class="main-layout__nav-item"
+          routerLinkActive="main-layout__nav-item--active"
+        >
+          <button class="main-layout__nav-link" [routerLink]="['/manage-user']">
+            <mat-icon
+              appAnimateOnScroll
+              fontIcon="groups"
+              aria-hidden="true"
+            ></mat-icon>
+            <span appAnimateOnScroll="animate__fadeIn">Manage User</span>
+          </button>
+        </li>
+        <li
+          class="main-layout__nav-item"
+          routerLinkActive="main-layout__nav-item--active"
+        >
+          <button
+            class="main-layout__nav-link"
+            [routerLink]="['/generate-bill']"
+          >
+            <mat-icon
+              appAnimateOnScroll
+              fontIcon="receipt"
+              aria-hidden="true"
+            ></mat-icon>
+            <span appAnimateOnScroll="animate__fadeIn">Generate Bill</span>
+          </button>
+        </li>
+        <li
+          class="main-layout__nav-item"
+          routerLinkActive="main-layout__nav-item--active"
+        >
+          <button class="main-layout__nav-link" [routerLink]="['/profile']">
+            <mat-icon
+              appAnimateOnScroll
+              fontIcon="person"
+              aria-hidden="true"
+            ></mat-icon>
+            <span appAnimateOnScroll="animate__fadeIn">Profile</span>
+          </button>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Footer - Sidebar: Logout -->
+    <footer class="main-layout__sidebar-footer">
+      <button
+        class="main-layout__logout"
+        appAnimateOnScroll
+        (click)="goTo('pre-login')"
+      >
+        Logout
+      </button>
+    </footer>
+  </aside>
+
+  <!-- Content main -->
+  <div class="main-layout__content">
+    <router-outlet></router-outlet>
+  </div>
+</div>

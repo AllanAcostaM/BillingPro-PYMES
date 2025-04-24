@@ -1,0 +1,22 @@
+[
+  { "id": "NY", "name": "New York Branch", "country": "United States" },
+  { "id": "LA", "name": "Los Angeles Branch", "country": "United States" },
+  { "id": "CHI", "name": "Chicago Branch", "country": "United States" },
+  { "id": "TOR", "name": "Toronto Branch", "country": "Canada" },
+  { "id": "MTL", "name": "Montreal Branch", "country": "Canada" },
+  { "id": "LON", "name": "London Branch", "country": "United Kingdom" },
+  { "id": "MAN", "name": "Manchester Branch", "country": "United Kingdom" },
+  { "id": "BER", "name": "Berlin Branch", "country": "Germany" },
+  { "id": "PAR", "name": "Paris Branch", "country": "France" },
+  { "id": "MAD", "name": "Madrid Branch", "country": "Spain" },
+  { "id": "ROM", "name": "Rome Branch", "country": "Italy" },
+  { "id": "TKY", "name": "Tokyo Branch", "country": "Japan" },
+  { "id": "SIN", "name": "Singapore Branch", "country": "Singapore" },
+  { "id": "DEL", "name": "Delhi Branch", "country": "India" },
+  { "id": "BOM", "name": "Mumbai Branch", "country": "India" },
+  { "id": "PEK", "name": "Beijing Branch", "country": "China" },
+  { "id": "JHB", "name": "Johannesburg Branch", "country": "South Africa" },
+  { "id": "CAI", "name": "Cairo Branch", "country": "Egypt" },
+  { "id": "SYD", "name": "Sydney Branch", "country": "Australia" },
+  { "id": "AKL", "name": "Auckland Branch", "country": "New Zealand" }
+]

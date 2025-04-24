@@ -1,0 +1,30 @@
+@use "../base/variables" as v;
+
+@mixin input() {
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="password"],
+  select {
+    font-family: v.$font-family-primary;
+    border: 1px solid v.$yellow-color-secondary;
+    background-color: v.$black-color-primary;
+    color: v.$color-text-quaternary;
+    font-size: v.$font-size-small;
+    padding: 0.65rem 0.5rem;
+    border-radius: 0.8rem;
+    outline: none;
+  }
+  input:focus,
+  select:focus {
+    border-color: v.$yellow-color-quinary;
+  }
+  input::placeholder {
+    color: #fbf4df7c;
+  }
+
+  input.input_error,
+  select.input_error {
+    border-color: v.$red-color-primary;
+  }
+}

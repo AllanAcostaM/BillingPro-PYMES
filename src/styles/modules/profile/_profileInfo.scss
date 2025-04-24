@@ -1,0 +1,99 @@
+@use "../../base/variables" as *;
+@use "../../components/button" as b;
+
+.profile {
+  padding: 2rem;
+  animation-duration: 2s;
+  animation-delay: 1.5s;
+
+  &__header {
+    position: relative;
+    background-color: $yellow-color-primary;
+    background-image: linear-gradient(
+      to right,
+      #d0c9a3,
+      #c8be96,
+      #c1b48a,
+      #b9a97d,
+      #b29f71
+    );
+    border-top-left-radius: $border-radius-small;
+    border-top-right-radius: $border-radius-small;
+    padding: 3rem;
+  }
+
+  &__title {
+    font-family: $font-family-primary;
+    font-size: $font-size-h3;
+    font-weight: $font-weight-bold;
+    color: $black-color-primary;
+    margin: 0;
+  }
+
+  &__avatar {
+    position: absolute;
+    top: 50%;
+    right: 3.5rem;
+    transform: translateY(-20%);
+    width: 14rem;
+    height: 14rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid $black-color-primary;
+    background-color: $white-color-secondary;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__main {
+    background-color: $yellow-color-primary;
+    border-bottom-left-radius: $border-radius-small;
+    border-bottom-right-radius: $border-radius-small;
+    padding: 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  &__row {
+    display: flex;
+    gap: 1rem;
+  }
+
+  &__label {
+    font-family: $font-family-primary;
+    font-size: $font-size-small;
+    font-weight: $font-weight-medium;
+    color: $color-text-secondary;
+  }
+
+  &__value {
+    font-family: $font-family-primary;
+    font-size: $font-size-small;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+  }
+
+  &__actions {
+    align-self: flex-end;
+    margin-top: 1rem;
+    margin-right: 3.8rem;
+    @include b.button();
+
+    .form__button {
+      animation-duration: 2s;
+      animation-delay: 1.5s;
+    }
+  }
+}

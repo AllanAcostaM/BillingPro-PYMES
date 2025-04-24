@@ -1,0 +1,73 @@
+@use "../../../../styles/base/variables" as *;
+@use "../../../../styles/base/animations" as *;
+
+.loading--screen {
+  background-color: $background-black-main;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  animation: fadeOut 1s forwards;
+  animation-delay: 1s;
+}
+
+.loading__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  overflow: visible;
+}
+
+.loading__spinner {
+  width: 4px;
+  height: 86px;
+  background: $white-color-secondary;
+  margin: auto;
+  position: relative;
+  animation: shake 1s linear infinite alternate, lightup 1s linear infinite;
+  transform-origin: 0 0;
+}
+
+.loading__spinner::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 100%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 16px;
+  box-sizing: border-box;
+  border: 5px solid $yellow-color-tertiary;
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+}
+.loading__spinner::after {
+  content: "";
+  left: 50%;
+  bottom: 0;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 64px;
+  height: 32px;
+  border-radius: 50px 50px 0 0;
+  background: $white-color-secondary;
+}
+
+.loading__text {
+  font-family: $font-family-secondary;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: $color-text-secondary;
+  font-size: $font-size-h3;
+  margin: 3rem 0 0 3rem;
+  animation: l1 1s linear infinite alternate;
+}
+.loading__text:before {
+  content: "Loading...";
+}

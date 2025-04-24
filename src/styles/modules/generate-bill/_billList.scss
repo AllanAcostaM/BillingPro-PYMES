@@ -1,0 +1,93 @@
+@use "../../base/variables" as *;
+@use "../../components/button" as b;
+
+.bill {
+  &__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-family: $font-family-primary;
+    font-size: 1.8rem;
+    font-weight: $font-weight-bold;
+    color: $color-text-tertiary;
+    margin-left: 1rem;
+    animation-duration: 2s;
+    animation-delay: 1.5s;
+  }
+
+  &__actions {
+    margin-right: 1.5rem;
+    @include b.button();
+
+    .form__button {
+      animation-duration: 2s;
+      animation-delay: 1.5s;
+    }
+  }
+
+  &__list {
+    background-color: $yellow-color-primary;
+    border-radius: $border-radius-small;
+    padding: 1.3rem;
+    animation-duration: 2s;
+    animation-delay: 1.5s;
+  }
+
+  &__head {
+    display: grid;
+    grid-template-columns:
+      1fr /* UID */
+      3fr /* Name */
+      4fr /* Address */
+      2fr /* SCNO */
+      2fr /* Units */
+      2fr /* Date */
+      2fr /* Due Date */
+      2fr /* Due Amount */
+      2fr; /* Total Amount */
+    gap: 1rem;
+    align-items: center;
+
+    margin: -1.1rem;
+    margin-bottom: 0;
+    padding: 1rem 1rem;
+    border-top-left-radius: $border-radius-small;
+    border-top-right-radius: $border-radius-small;
+    background-color: rgba(208, 201, 163, 0.3);
+  }
+
+  &__col {
+    font-family: $font-family-primary;
+    font-size: $font-size-small;
+    font-weight: $font-weight-medium;
+    color: $color-text-secondary;
+  }
+
+  &__row {
+    display: grid;
+    grid-template-columns:
+      1fr
+      3fr
+      4fr
+      2fr
+      2fr
+      2fr
+      2fr
+      2fr
+      2fr;
+    align-items: center;
+    padding: 0.7rem 0rem;
+    gap: 1.1rem;
+  }
+
+  &__cell {
+    font-family: $font-family-primary;
+    font-size: $font-size-small;
+    font-weight: $font-weight-bold;
+    color: $color-text-primary;
+  }
+}

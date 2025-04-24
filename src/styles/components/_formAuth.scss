@@ -1,0 +1,15 @@
+@use "../components/label" as l;
+@use "../components/error" as e;
+@use "../components/input" as i;
+@use "../components/checkbox" as cb;
+@use "../components/button" as b;
+@use "../components/password-reveal" as pr;
+
+.form {
+  @include l.label();
+  @include e.error();
+  @include i.input();
+  @include cb.checkbox();
+  @include b.button();
+  @include pr.password-reveal();
+}

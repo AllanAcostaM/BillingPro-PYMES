@@ -1,0 +1,239 @@
+@use "../base/animations";
+@use "../base/variables";
+@use "../base/mixins";
+
+.pre-login {
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: auto auto auto;
+  gap: 1rem;
+  background-color: variables.$background-yellow-pre-login;
+
+  &__header {
+    grid-column: span 3 / span 3;
+    grid-row: span 3 / span 3;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 6.5rem;
+
+    &-title {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      text-align: center;
+      margin-left: 8rem;
+      animation-duration: 2.5s;
+      animation-delay: 1s;
+
+      h1 {
+        font-family: variables.$font-family-tertiary;
+        font-size: variables.$font-size-h1;
+        font-weight: variables.$font-weight-bold;
+        color: variables.$color-text-primary;
+        padding: variables.$spacing-medium variables.$spacing-large;
+        padding: 2rem 7rem;
+        border: 2px solid variables.$black-color-primary;
+        white-space: nowrap;
+        position: relative;
+
+        .corner {
+          position: absolute;
+          width: 20px;
+          height: 20px;
+          background-color: variables.$yellow-color-secondary;
+          border: 2px solid variables.$black-color-primary;
+
+          &--top-right {
+            top: -10px;
+            right: -10px;
+          }
+
+          &--bottom-left {
+            bottom: -10px;
+            left: -10px;
+          }
+
+          &--top-left {
+            bottom: 188px;
+            left: -10px;
+          }
+
+          &--bottom-right {
+            top: 188px;
+            right: -10px;
+          }
+        }
+      }
+
+      p {
+        font-family: variables.$font-family-primary;
+        margin-top: variables.$spacing-large;
+        font-size: variables.$font-size-body;
+        color: variables.$color-text-primary;
+        animation-duration: 1.5s;
+        animation-delay: 1s;
+      }
+    }
+
+    .pre-login__buttons {
+      display: flex;
+      gap: 6rem;
+      justify-content: center;
+      align-items: center;
+      margin-left: 9rem;
+      margin-top: 1rem;
+    }
+
+    .pre-login__button-container {
+      position: relative;
+      width: 11rem;
+      height: 3rem;
+      overflow: hidden;
+      border: 1px solid variables.$black-color-primary;
+      transition: 0.5s;
+      letter-spacing: 2px;
+      font-family: variables.$font-family-tertiary;
+      font-size: variables.$font-size-small;
+      font-weight: variables.$font-weight-medium;
+      border-radius: variables.$border-radius-large;
+      animation-duration: 2s;
+      animation-delay: 1s;
+
+      .pre-login__button {
+        width: 101%;
+        height: 100%;
+        letter-spacing: 2px;
+        font-family: variables.$font-family-tertiary;
+        font-size: variables.$font-size-small;
+        font-weight: variables.$font-weight-medium;
+
+        @include mixins.button(
+          variables.$button-secondary-bg-color,
+          "https://raw.githubusercontent.com/robin-dela/css-mask-animation/master/img/nature-sprite.png",
+          2300%,
+          100%,
+          none,
+          variables.$button-tertiary-color-text
+        );
+        cursor: pointer;
+        -webkit-animation: ani2 0.7s steps(22) forwards;
+        animation: ani2 0.7s steps(22) forwards;
+
+        &:hover {
+          -webkit-animation: ani 0.7s steps(22) forwards;
+          animation: ani 0.7s steps(22) forwards;
+        }
+      }
+
+      .pre-login__button-mask {
+        position: absolute;
+        text-align: center;
+        width: 101%;
+        margin-top: 13px;
+        letter-spacing: 2px;
+        overflow: hidden;
+        font-family: variables.$font-family-tertiary;
+        font-size: variables.$font-size-small;
+        font-weight: variables.$font-weight-medium;
+        color: variables.$button-primary-color-text;
+      }
+    }
+  }
+
+  &__logo-section {
+    grid-column: span 2 / span 2;
+    grid-row: span 3 / span 3;
+    grid-column-start: 4;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+
+    span {
+      animation-duration: 2s;
+      animation-delay: 1s;
+    }
+
+    .pre-login__logo {
+      width: 400px;
+      height: 350px;
+      margin-bottom: 1.3rem;
+    }
+    .pre-login__logo-title {
+      font-family: variables.$font-family-secondary;
+      font-size: variables.$font-size-h2;
+      font-weight: variables.$font-weight-bold;
+      color: variables.$color-text-primary;
+      letter-spacing: 2px;
+      margin-bottom: 4.5rem;
+      animation-duration: 2s;
+      animation-delay: 1s;
+    }
+  }
+
+  &__footer {
+    grid-column: span 5 / span 5;
+    grid-row: span 2 / span 2;
+    grid-row-start: 4;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &-stats {
+      display: flex;
+      justify-content: space-around;
+      width: 85%;
+      height: 85%;
+      padding: 1.5rem 2rem;
+      flex-wrap: wrap;
+      gap: 2rem;
+      background-color: #d6a536;
+      border-radius: variables.$border-radius-large;
+      margin-bottom: 3rem;
+      position: relative;
+      z-index: 1;
+      animation-duration: 1s;
+      animation-delay: 1s;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 14px;
+        right: 7px;
+        width: 100%;
+        height: 100%;
+        border: 2px solid variables.$black-color-primary;
+        background-color: variables.$background-yellow-footer-pre-login;
+        border-radius: 2rem;
+        z-index: -1;
+      }
+    }
+
+    &-stat {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      text-align: start;
+
+      strong {
+        font-family: variables.$font-family-tertiary;
+        font-size: 1.5rem;
+        font-weight: variables.$font-weight-bold;
+        color: variables.$color-text-primary;
+        margin-bottom: 5px;
+      }
+
+      p {
+        font-family: variables.$font-family-tertiary;
+        font-size: variables.$font-size-body;
+        font-weight: variables.$font-weight-regular;
+        color: variables.$color-text-primary;
+      }
+    }
+  }
+}

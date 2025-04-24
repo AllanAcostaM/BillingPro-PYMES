@@ -1,0 +1,137 @@
+@use "../../base/variables" as *;
+
+.dashboard {
+  &__charts {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    padding: 1.2rem 0.1rem;
+  }
+
+  &__chart {
+    background-color: $yellow-color-primary;
+    border-radius: $border-radius-small;
+    padding: 1rem;
+    position: relative;
+
+    &-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1rem;
+    }
+
+    &-content {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1.5rem;
+    }
+
+    /* ---------- Payments Analysis (Right) ---------- */
+
+    &--analysis {
+      flex: 2;
+      animation-duration: 2s;
+      animation-delay: 2s;
+
+      .dashboard__chart-content {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+      }
+
+      .dashboard__chart-title {
+        color: $color-text-tertiary;
+        font-family: $font-family-primary;
+        font-size: $font-size-body;
+        font-weight: $font-weight-bold;
+      }
+
+      .dashboard__chart-period {
+        color: $color-text-secondary;
+        font-family: $font-family-primary;
+        font-size: $font-size-body;
+        font-weight: $font-weight-bold;
+        position: relative;
+        display: flex;
+        align-items: center;
+
+        .dashboard__chart-period-icon {
+          mat-icon {
+            color: $yellow-color-tertiary;
+            font-size: 1.2rem;
+            margin-top: 8px;
+          }
+        }
+      }
+
+      .dashboard__chart-pie {
+        max-width: 100%;
+        height: 120px;
+      }
+
+      .dashboard__chart-legend {
+        background-color: $black-color-primary;
+        border-radius: $border-radius-small;
+        padding: 1rem 1rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 1.7rem;
+      }
+
+      .dashboard__chart-legend-item {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        gap: 0.4rem;
+      }
+
+      .dashboard__chart-legend-texts {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .dashboard__chart-legend-color {
+        width: 0.7rem;
+        height: 0.7rem;
+        border-radius: 50%;
+        display: inline-block;
+      }
+
+      .dashboard__chart-legend-color--green {
+        background-color: $green-color-secondary;
+        margin-bottom: 1.3rem;
+      }
+
+      .dashboard__chart-legend-color--purple {
+        background-color: $purple-color-primary;
+        margin-bottom: 1.3rem;
+      }
+
+      .dashboard__chart-legend-text {
+        color: $color-text-octogenarian;
+        font-family: $font-family-primary;
+        font-weight: $font-weight-medium;
+        font-size: 12.5px;
+      }
+
+      .dashboard__chart-legend-percentage {
+        color: $color-text-tertiary;
+        font-family: $font-family-primary;
+        font-size: $font-size-body;
+        font-weight: $font-weight-medium;
+      }
+
+      .dashboard__chart-legend-separator {
+        width: 1px;
+        height: 3rem;
+        margin-top: 13px;
+        background-color: $yellow-color-quinary;
+      }
+    }
+  }
+}

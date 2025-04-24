@@ -1,0 +1,66 @@
+<div class="pre-login">
+  <div class="pre-login__header">
+    <div class="pre-login__header-title" appAnimateOnScroll="animate__fadeIn">
+      <h1>
+        Simplify your company's <br />
+        financial management!!
+        <span class="corner corner--top-left"></span>
+        <span class="corner corner--bottom-left"></span>
+        <span class="corner corner--top-right"></span>
+        <span class="corner corner--bottom-right"></span>
+      </h1>
+      <p>
+        Optimize your billing processes with a modern and efficient<br />
+        platform. Control your income, payments and financial reports<br />
+        from a single place, designed for the growth of your business.
+      </p>
+    </div>
+
+    <div class="pre-login__buttons">
+      <div class="pre-login__button-container" appAnimateOnScroll>
+        <span class="pre-login__button-mask">Sign Up</span>
+        <button class="pre-login__button" routerLink="/sign-up">Sign Up</button>
+      </div>
+      <div class="pre-login__button-container" appAnimateOnScroll>
+        <span class="pre-login__button-mask">Sign In</span>
+        <button class="pre-login__button" routerLink="/sign-in">Sign In</button>
+      </div>
+    </div>
+  </div>
+  <div class="pre-login__logo-section">
+    <span appAnimateOnScroll>
+      <img
+        appVanillaTilt
+        [tiltOptions]="{ max: 20, speed: 300 }"
+        src="../../assets/icons/BillingLogo.svg"
+        alt="BillingPro Logo"
+        class="pre-login__logo"
+      />
+    </span>
+    <h2 class="pre-login__logo-title" appAnimateOnScroll>BillingPro PYMES</h2>
+  </div>
+  <div class="pre-login__footer">
+    <div class="pre-login__footer-stats" appAnimateOnScroll="animate__fadeIn">
+      <div class="pre-login__footer-stat">
+        <strong appCountUpOnScroll [duration]="4" [suffix]="'K'" [decimals]="1">
+          4.5K
+        </strong>
+        <p>Active users</p>
+      </div>
+      <div class="pre-login__footer-stat">
+        <strong appCountUpOnScroll [duration]="3" [suffix]="'+'"> 12+ </strong>
+        <p>Years experience</p>
+      </div>
+      <div class="pre-login__footer-stat">
+        <strong appCountUpOnScroll [duration]="4" [suffix]="'K'" [decimals]="1">
+          6.9K
+        </strong>
+        <p>Transactions</p>
+      </div>
+      <div class="pre-login__footer-stat">
+        <strong appCountUpOnScroll [duration]="4" [decimals]="1"> 4.9 </strong>
+        <p>Platform rating</p>
+      </div>
+    </div>
+  </div>
+</div>

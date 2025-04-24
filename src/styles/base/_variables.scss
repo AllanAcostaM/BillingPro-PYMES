@@ -1,0 +1,92 @@
+// 🎨 COLORS PALETTE
+
+// warm colors
+$yellow-color-primary: #fbf4df;
+$yellow-color-secondary: #f8d046;
+$yellow-color-tertiary: #b29f71;
+$yellow-color-quaternary: #9d8c64;
+$yellow-color-quinary: #d0c9a3;
+
+$red-color-primary: #f32d2d;
+
+// neutral colors
+$black-color-primary: #333333;
+$white-color-secondary: #ffff;
+
+// cold colors
+$green-color-primary: #05cd99;
+$green-color-secondary: #009966;
+
+$purple-color-primary: #6a287e;
+
+// ==========================================================
+
+// 🖌️ COMPONENT-SPECIFIC COLORS
+
+// ==================== Buttons
+
+// Buttons bg color
+$button-primary-bg-color: $yellow-color-secondary;
+$button-secondary-bg-color: $black-color-primary;
+
+// Buttons color text
+$button-primary-color-text: $black-color-primary;
+$button-secondary-color-text: $yellow-color-quinary;
+$button-tertiary-color-text: $yellow-color-quaternary;
+
+// ==================== Texts
+
+$color-text-primary: $black-color-primary;
+$color-text-secondary: $yellow-color-tertiary;
+$color-text-tertiary: $yellow-color-quaternary;
+$color-text-quaternary: $yellow-color-primary;
+$color-text-quinary: $yellow-color-secondary;
+$color-text-senary: $red-color-primary;
+$color-text-septenary: $green-color-primary;
+$color-text-octogenarian: $yellow-color-quinary;
+
+// ==================== Backgrounds
+
+$background-black-main: $black-color-primary;
+$background-yellow-pre-login: $yellow-color-primary;
+$background-yellow-footer-pre-login: $yellow-color-secondary;
+
+// Btn-backgrounds
+
+$background-btn-black-primary: $black-color-primary;
+$background-btn-yellow-primary: $yellow-color-secondary;
+
+// ==========================================================
+
+// ✏️ TYPOGRAPHY
+
+$font-family-primary: "DM Sans", sans-serif;
+$font-family-secondary: "Fira Code", sans-serif;
+$font-family-tertiary: "Lato", sans-serif;
+
+// font size
+$font-size-base: 16px;
+$font-size-h1: 3.5rem;
+$font-size-h2: 2.5rem;
+$font-size-h3: 2rem;
+$font-size-body: 1rem;
+$font-size-small: 0.875rem;
+
+// typographic weights
+$font-weight-regular: 400;
+$font-weight-medium: 500;
+$font-weight-bold: 700;
+
+// ==========================================================
+
+// 📦 SPACING AND BORDERS
+
+// Spacings
+$spacing-small: 8px;
+$spacing-medium: 16px;
+$spacing-large: 32px;
+
+// Borders
+$border-radius-small: 16px;
+$border-radius-medium: 24px;
+$border-radius-large: 32px;

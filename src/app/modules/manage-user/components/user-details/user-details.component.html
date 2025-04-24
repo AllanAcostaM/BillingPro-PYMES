@@ -1,0 +1,262 @@
+<header class="modules__header">
+  <div class="modules__header-top">
+    <!-- Header User Details -->
+    <div class="modules__header-texts">
+      <!-- 1) Pages / modules -->
+      <p class="modules__crumbs" appAnimateOnScroll="animate__fadeIn">
+        Pages / Manage User
+      </p>
+
+      <!-- 2) Main Dashboard -->
+      <h3 class="modules__main-title" appAnimateOnScroll="animate__fadeIn">
+        Manage User
+      </h3>
+
+      <!-- 3) Lalitpur Branch -->
+      <p class="modules__branch" appAnimateOnScroll="animate__fadeIn">
+        Lalitpur Branch
+      </p>
+    </div>
+
+    <!-- Search bar -->
+    <div class="modules__search" appAnimateOnScroll>
+      <div class="modules__search-outer">
+        <div class="modules__search-inner">
+          <mat-icon class="modules__search-icon" aria-hidden="true"
+            >search</mat-icon
+          >
+          <input
+            type="text"
+            class="modules__search-input"
+            placeholder="Search"
+          />
+        </div>
+        <img
+          src="../../../assets/images/profile.png"
+          alt="Search Avatar"
+          class="modules__search-image"
+        />
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- Content Main User Details -->
+<div class="manage-user__user-details-add">
+  <button
+    appAnimateOnScroll
+    type="button"
+    class="form__button"
+    (click)="router.navigate(['../add'], { relativeTo: route })"
+  >
+    Add User
+  </button>
+</div>
+
+<section class="manage-user__user-details" appAnimateOnScroll="animate__fadeIn">
+  <!-- Header List -->
+  <div class="manage-user__user-details-header">
+    <p class="manage-user__user-details-title">User Details</p>
+
+    <div class="manage-user__user-details-controls">
+      <div class="manage-user__user-details-icon">
+        <mat-icon aria-hidden="true">more_horiz</mat-icon>
+      </div>
+    </div>
+  </div>
+
+  <!-- Body - Header list -->
+  <div class="manage-user__user-details-body">
+    <div class="manage-user__user-details-head">
+      <div class="manage-user__user-details-head-col">
+        <span class="manage-user__user-details-head-text">UID</span>
+        <mat-icon class="manage-user__user-details-head-icon"
+          >arrow_drop_down</mat-icon
+        >
+      </div>
+      <div class="manage-user__user-details-head-col">
+        <span class="manage-user__user-details-head-text">Name</span>
+        <mat-icon class="manage-user__user-details-head-icon"
+          >arrow_drop_down</mat-icon
+        >
+      </div>
+      <div class="manage-user__user-details-head-col">
+        <span class="manage-user__user-details-head-text">Address</span>
+        <mat-icon class="manage-user__user-details-head-icon"
+          >arrow_drop_down</mat-icon
+        >
+      </div>
+      <div class="manage-user__user-details-head-col">
+        <span class="manage-user__user-details-head-text">SCNO</span>
+        <mat-icon class="manage-user__user-details-head-icon"
+          >arrow_drop_down</mat-icon
+        >
+      </div>
+      <div class="manage-user__user-details-head-col">
+        <span class="manage-user__user-details-head-text">Amount</span>
+        <mat-icon class="manage-user__user-details-head-icon"
+          >arrow_drop_down</mat-icon
+        >
+      </div>
+      <div class="manage-user__user-details-head-col">
+        <span class="manage-user__user-details-head-text">Action</span>
+        <mat-icon class="manage-user__user-details-head-icon"
+          >arrow_drop_down</mat-icon
+        >
+      </div>
+    </div>
+
+    <hr class="manage-user__user-details-separator" />
+
+    <!-- Content List Items -->
+    <div class="manage-user__user-details-row">
+      <div class="manage-user__user-details-cell">112</div>
+      <div class="manage-user__user-details-cell">Mithlesh Kumar Singh</div>
+      <div class="manage-user__user-details-cell">Kritipur, Kathmandu</div>
+      <div class="manage-user__user-details-cell">12358G</div>
+      <div class="manage-user__user-details-cell">987569326</div>
+      <div
+        class="manage-user__user-details-cell manage-user__user-details-cell--action"
+      >
+        <mat-icon class="edit-icon">edit</mat-icon>
+        <span class="divider"></span>
+        <mat-icon class="delete-icon">delete</mat-icon>
+      </div>
+    </div>
+
+    <div class="manage-user__user-details-row">
+      <div class="manage-user__user-details-cell">113</div>
+      <div class="manage-user__user-details-cell">Suron Maharjan</div>
+      <div class="manage-user__user-details-cell">Natole, Lalitpur</div>
+      <div class="manage-user__user-details-cell">86523B</div>
+      <div class="manage-user__user-details-cell">987569326</div>
+      <div
+        class="manage-user__user-details-cell manage-user__user-details-cell--action"
+      >
+        <mat-icon class="edit-icon">edit</mat-icon>
+        <span class="divider"></span>
+        <mat-icon class="delete-icon">delete</mat-icon>
+      </div>
+    </div>
+
+    <div class="manage-user__user-details-row">
+      <div class="manage-user__user-details-cell">114</div>
+      <div class="manage-user__user-details-cell">Sandesh Bajracharya</div>
+      <div class="manage-user__user-details-cell">Bhinchhebahal, Lalitpur</div>
+      <div class="manage-user__user-details-cell">78365D</div>
+      <div class="manage-user__user-details-cell">987569326</div>
+      <div
+        class="manage-user__user-details-cell manage-user__user-details-cell--action"
+      >
+        <mat-icon class="edit-icon">edit</mat-icon>
+        <span class="divider"></span>
+        <mat-icon class="delete-icon">delete</mat-icon>
+      </div>
+    </div>
+
+    <div class="manage-user__user-details-row">
+      <div class="manage-user__user-details-cell">115</div>
+      <div class="manage-user__user-details-cell">Subin Sedhai</div>
+      <div class="manage-user__user-details-cell">Baneshwor, Kathmandu</div>
+      <div class="manage-user__user-details-cell">863265F</div>
+      <div class="manage-user__user-details-cell">987569326</div>
+      <div
+        class="manage-user__user-details-cell manage-user__user-details-cell--action"
+      >
+        <mat-icon class="edit-icon">edit</mat-icon>
+        <span class="divider"></span>
+        <mat-icon class="delete-icon">delete</mat-icon>
+      </div>
+    </div>
+
+    <div class="manage-user__user-details-row">
+      <div class="manage-user__user-details-cell">116</div>
+      <div class="manage-user__user-details-cell">Wonjala Joshi</div>
+      <div class="manage-user__user-details-cell">Bhaisepati, Lalitpur</div>
+      <div class="manage-user__user-details-cell">459872B</div>
+      <div class="manage-user__user-details-cell">987569326</div>
+      <div
+        class="manage-user__user-details-cell manage-user__user-details-cell--action"
+      >
+        <mat-icon class="edit-icon">edit</mat-icon>
+        <span class="divider"></span>
+        <mat-icon class="delete-icon">delete</mat-icon>
+      </div>
+    </div>
+
+    <div class="manage-user__user-details-row">
+      <div class="manage-user__user-details-cell">117</div>
+      <div class="manage-user__user-details-cell">Numa Limbu</div>
+      <div class="manage-user__user-details-cell">Sampang Chowk,Dharan</div>
+      <div class="manage-user__user-details-cell">742552A</div>
+      <div class="manage-user__user-details-cell">987569326</div>
+      <div
+        class="manage-user__user-details-cell manage-user__user-details-cell--action"
+      >
+        <mat-icon class="edit-icon">edit</mat-icon>
+        <span class="divider"></span>
+        <mat-icon class="delete-icon">delete</mat-icon>
+      </div>
+    </div>
+
+    <div class="manage-user__user-details-row">
+      <div class="manage-user__user-details-cell">118</div>
+      <div class="manage-user__user-details-cell">Nimesh Sthapit</div>
+      <div class="manage-user__user-details-cell">Newroad, Pokhara</div>
+      <div class="manage-user__user-details-cell">74123B</div>
+      <div class="manage-user__user-details-cell">987569326</div>
+      <div
+        class="manage-user__user-details-cell manage-user__user-details-cell--action"
+      >
+        <mat-icon class="edit-icon">edit</mat-icon>
+        <span class="divider"></span>
+        <mat-icon class="delete-icon">delete</mat-icon>
+      </div>
+    </div>
+
+    <div class="manage-user__user-details-row">
+      <div class="manage-user__user-details-cell">119</div>
+      <div class="manage-user__user-details-cell">Samikshya Basnet</div>
+      <div class="manage-user__user-details-cell">Nakhipot, Lalitpur</div>
+      <div class="manage-user__user-details-cell">741369P</div>
+      <div class="manage-user__user-details-cell">987569326</div>
+      <div
+        class="manage-user__user-details-cell manage-user__user-details-cell--action"
+      >
+        <mat-icon class="edit-icon">edit</mat-icon>
+        <span class="divider"></span>
+        <mat-icon class="delete-icon">delete</mat-icon>
+      </div>
+    </div>
+
+    <div class="manage-user__user-details-row">
+      <div class="manage-user__user-details-cell">120</div>
+      <div class="manage-user__user-details-cell">Sushant Kushwar</div>
+      <div class="manage-user__user-details-cell">Sinamangal, Kathmandu</div>
+      <div class="manage-user__user-details-cell">75962K</div>
+      <div class="manage-user__user-details-cell">987569326</div>
+      <div
+        class="manage-user__user-details-cell manage-user__user-details-cell--action"
+      >
+        <mat-icon class="edit-icon">edit</mat-icon>
+        <span class="divider"></span>
+        <mat-icon class="delete-icon">delete</mat-icon>
+      </div>
+    </div>
+
+    <div class="manage-user__user-details-row">
+      <div class="manage-user__user-details-cell">121</div>
+      <div class="manage-user__user-details-cell">Hrishav Gajurel</div>
+      <div class="manage-user__user-details-cell">Khumaltar, Lalitpur</div>
+      <div class="manage-user__user-details-cell">4596321A</div>
+      <div class="manage-user__user-details-cell">987569326</div>
+      <div
+        class="manage-user__user-details-cell manage-user__user-details-cell--action"
+      >
+        <mat-icon class="edit-icon">edit</mat-icon>
+        <span class="divider"></span>
+        <mat-icon class="delete-icon">delete</mat-icon>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,343 @@
+<div class="auth auth--signup">
+
+    <!-- Header -->
+  <div class="auth__header">
+    <div class="auth__header-content" appAnimateOnScroll="animate__fadeIn">
+      <h2 class="auth__header-title">Register</h2>
+      <p class="auth__header-subtitle">
+        Let’s Sign up first to enter into Billing Pro PYMES Website. Uh She Up!
+      </p>
+    </div>
+  </div>
+
+   <!-- Form -->
+  <div class="auth__form">
+    <form
+      class="form form--signup"
+      [formGroup]="form"
+      (ngSubmit)="submitForm()"
+    >
+      <!-- Row 1: First Name & Last Name -->
+      <div class="form__group" appAnimateOnScroll="animate__fadeIn">
+        <label class="form__label" for="firstName">First Name* </label>
+        <input
+          class="form__input"
+          type="text"
+          id="firstName"
+          formControlName="firstName"
+          [ngClass]="{ input_error: isFieldInvalid('firstName') }"
+          placeholder="Ex: Joseph"
+          autocomplete="off"
+          required
+        />
+        <div *ngIf="hasError('firstName', 'required')" class="error">
+          First Name is required.
+        </div>
+        <div *ngIf="hasError('firstName', 'nonAlphabetic')" class="error">
+          Only letters are allowed.
+        </div>
+      </div>
+      <div class="form__group" appAnimateOnScroll="animate__fadeIn">
+        <label class="form__label" for="lastName">Last Name* </label>
+        <input
+          class="form__input"
+          type="text"
+          id="lastName"
+          formControlName="lastName"
+          [ngClass]="{ input_error: isFieldInvalid('lastName') }"
+          placeholder="Ex: Walker"
+          autocomplete="off"
+          required
+        />
+        <div *ngIf="hasError('lastName', 'required')" class="error">
+          Last Name is required.
+        </div>
+        <div *ngIf="hasError('lastName', 'nonAlphabetic')" class="error">
+          Only letters are allowed.
+        </div>
+      </div>
+
+      <!-- Row 2: Your Email & Contact No -->
+      <div class="form__group" appAnimateOnScroll="animate__fadeIn">
+        <label class="form__label" for="email">Your Email* </label>
+        <input
+          class="form__input"
+          type="email"
+          id="email"
+          formControlName="email"
+          [ngClass]="{ input_error: isFieldInvalid('email') }"
+          placeholder="Ex: Joseph@billingpro.com"
+          autocomplete="off"
+          required
+        />
+        <div *ngIf="hasError('email', 'required')" class="error">
+          Email is required.
+        </div>
+        <div *ngIf="hasError('email', 'invalidEmail')" class="error">
+          Invalid email format.
+        </div>
+      </div>
+      <div class="form__group" appAnimateOnScroll="animate__fadeIn">
+        <label class="form__label" for="contactNo">Contact No* </label>
+        <input
+          class="form__input"
+          type="number"
+          id="contactNo"
+          formControlName="contactNo"
+          [ngClass]="{ input_error: isFieldInvalid('contactNo') }"
+          placeholder="Enter your phone number"
+          required
+        />
+        <div *ngIf="hasError('contactNo', 'required')" class="error">
+          Contact number is required.
+        </div>
+        <div *ngIf="hasError('contactNo', 'invalidPhone')" class="error">
+          Invalid phone number.
+        </div>
+      </div>
+
+      <!-- Row 3: Password & Confirm Password -->
+      <div class="form__group" appAnimateOnScroll="animate__fadeIn">
+        <label class="form__label" for="password">Password* </label>
+        <div class="form__password-container">
+          <input
+            #passwordInput
+            class="form__input form__input--password"
+            [type]="passwordVisible ? 'text' : 'password'"
+            id="password"
+            formControlName="password"
+            [ngClass]="{
+              input_error: isFieldInvalid('password'),
+              revealed: passwordVisible
+            }"
+            placeholder="Enter Password"
+            autocomplete="off"
+            required
+          />
+          <button
+            type="button"
+            class="form__toggle"
+            (click)="togglePassword()"
+            [attr.aria-pressed]="passwordVisible"
+            title="Toggle Password Visibility"
+          >
+            <svg
+              *ngIf="!passwordVisible"
+              class="form__toggle-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <title>Hide Password</title>
+              <path
+                d="M12 4C7 4 2.73 7.11 1 12a11.28 11.28 0 0 0 2.63 3.73l-1.43 1.43 1.41 1.41 1.43-1.43A11.28 11.28 0 0 0 12 20c5 0 9.27-3.11 11-8a11.28 11.28 0 0 0-2.63-3.73l1.43-1.43-1.41-1.41-1.43 1.43A11.28 11.28 0 0 0 12 4zm0 12a4 4 0 0 1-4-4 4 4 0 0 1 4-4 4 4 0 0 1 4 4 4 4 0 0 1-4 4z"
+              />
+              <circle cx="12" cy="12" r="2.5" />
+            </svg>
+            <svg
+              *ngIf="passwordVisible"
+              class="form__toggle-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <title>Show Password</title>
+              <path
+                d="M12 4C7 4 2.73 7.11 1 12c1.73 4.89 6 8 11 8s9.27-3.11 11-8c-1.73-4.89-6-8-11-8zm0 14a6 6 0 1 1 6-6 6 6 0 0 1-6 6z"
+              />
+              <circle cx="12" cy="12" r="2.5" />
+            </svg>
+          </button>
+        </div>
+        <div *ngIf="hasError('password', 'required')" class="error">
+          Password is required.
+        </div>
+        <div *ngIf="hasError('password', 'minlength')" class="error">
+          Password must be at least 6 characters.
+        </div>
+        <div *ngIf="hasError('password', 'weakPassword')" class="error">
+          Password is too weak.
+        </div>
+      </div>
+
+      <div class="form__group" appAnimateOnScroll="animate__fadeIn">
+        <label class="form__label" for="confirmPassword"
+          >Confirm Password*
+        </label>
+        <div class="form__password-container">
+          <input
+            #confirmPasswordInput
+            class="form__input"
+            [type]="confirmPasswordVisible ? 'text' : 'password'"
+            id="confirmPassword"
+            formControlName="confirmPassword"
+            [ngClass]="{ input_error: isFieldInvalid('confirmPassword') }"
+            placeholder="Confirm Password"
+            autocomplete="off"
+            required
+          />
+          <button
+            type="button"
+            class="form__toggle"
+            (click)="toggleConfirmPassword()"
+            [attr.aria-pressed]="confirmPasswordVisible"
+            title="Toggle Confirm Password Visibility"
+          >
+            <svg
+              *ngIf="!confirmPasswordVisible"
+              class="form__toggle-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <title>Hide Confirm Password</title>
+              <path
+                d="M12 4C7 4 2.73 7.11 1 12a11.28 11.28 0 0 0 2.63 3.73l-1.43 1.43 1.41 1.41 1.43-1.43A11.28 11.28 0 0 0 12 20c5 0 9.27-3.11 11-8a11.28 11.28 0 0 0-2.63-3.73l1.43-1.43-1.41-1.41-1.43 1.43A11.28 11.28 0 0 0 12 4zm0 12a4 4 0 0 1-4-4 4 4 0 0 1 4-4 4 4 0 0 1 4 4 4 4 0 0 1-4 4z"
+              />
+              <circle cx="12" cy="12" r="2.5" />
+            </svg>
+            <svg
+              *ngIf="confirmPasswordVisible"
+              class="form__toggle-icon"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+            >
+              <title>Show Confirm Password</title>
+              <path
+                d="M12 4C7 4 2.73 7.11 1 12c1.73 4.89 6 8 11 8s9.27-3.11 11-8c-1.73-4.89-6-8-11-8zm0 14a6 6 0 1 1 6-6 6 6 0 0 1-6 6z"
+              />
+              <circle cx="12" cy="12" r="2.5" />
+            </svg>
+          </button>
+        </div>
+        <div *ngIf="hasError('confirmPassword', 'required')" class="error">
+          Confirm your password.
+        </div>
+        <div
+          *ngIf="hasError('confirmPassword', 'fieldsNotMatch')"
+          class="error"
+        >
+          Passwords do not match.
+        </div>
+      </div>
+
+      <!-- Row 4: Your Branch & Your Country -->
+      <div class="form__group" appAnimateOnScroll="animate__fadeIn">
+        <label class="form__label" for="branch">Your Branch* </label>
+        <select
+          class="form__select"
+          id="branch"
+          formControlName="branch"
+          [ngClass]="{ input_error: isFieldInvalid('branch') }"
+          required
+        >
+          <option value="">Select your Branch...</option>
+          <option *ngFor="let branch of branches" [value]="branch.id">
+            {{ branch.name }}
+          </option>
+        </select>
+        <div *ngIf="hasError('branch', 'required')" class="error">
+          Branch is required.
+        </div>
+      </div>
+      <div class="form__group" appAnimateOnScroll="animate__fadeIn">
+        <label class="form__label" for="country">Your Country* </label>
+        <select
+          class="form__select"
+          id="country"
+          formControlName="country"
+          [ngClass]="{ input_error: isFieldInvalid('country') }"
+          required
+        >
+          <option value="">Select your Country...</option>
+          <option *ngFor="let country of countries" [value]="country.code">
+            {{ country.name }}
+          </option>
+        </select>
+        <div *ngIf="hasError('country', 'required')" class="error">
+          Country is required.
+        </div>
+      </div>
+
+      <!-- Row 5: Your Gender -->
+      <div
+        class="form__group form__group--full"
+        appAnimateOnScroll="animate__fadeIn"
+      >
+        <label class="form__label" for="gender">Your Gender* </label>
+        <select
+          class="form__select"
+          id="gender"
+          formControlName="gender"
+          [ngClass]="{ input_error: isFieldInvalid('gender') }"
+          required
+        >
+          <option value="">Select your Gender...</option>
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+        <div *ngIf="hasError('gender', 'required')" class="error">
+          Gender is required.
+        </div>
+      </div>
+
+      <!-- Row 6 Checkbox -->
+      <div
+        class="form__group form__group--checkbox"
+        appAnimateOnScroll="animate__fadeIn"
+      >
+        <div class="form__checkbox">
+          <input
+            class="form__checkbox-input"
+            type="checkbox"
+            id="terms"
+            formControlName="terms"
+            required
+          />
+          <span class="form__checkbox-label" for="terms"
+            >By creating an account, you agree to our Terms & Conditions</span
+          >
+        </div>
+        <div *ngIf="hasError('terms', 'required')" class="error">
+          You must accept the terms.
+        </div>
+      </div>
+
+      <div class="form__group form__group--button" appAnimateOnScroll>
+        <button
+        class="form__button"
+        type="submit"
+        >
+        Register</button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Footer -->
+  <div class="auth__footer">
+    <p appAnimateOnScroll="animate__fadeIn">
+      © 2024 BillingPro PYMES. All Rights Reserved. Made with love by Simmmple!
+    </p>
+  </div>
+
+  <!-- Section Logo -->
+  <div class="auth__logo-wrapper">
+    <div class="auth__logo-section">
+      <span appAnimateOnScroll>
+        <img
+          appVanillaTilt
+          [tiltOptions]="{ max: 20, speed: 300 }"
+          src="../../assets/icons/BillingLogo.svg"
+          alt="BillingPro Logo"
+          class="auth__logo"
+        />
+      </span>
+      <h2 class="auth__logo-title" appAnimateOnScroll>BillingPro PYMES</h2>
+    </div>
+  </div>
+</div>
