@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, RouterModule } from '@angular/router';
 import { SharedModule } from '../../shared/shared.module';
 import { of, Observable } from 'rxjs';
 import { BaseForm } from '../../shared/forms/base-form.class';
@@ -14,7 +14,7 @@ import { VanillaTiltDirective } from '../../directives/vanilla-tilt/vanilla-tilt
 
 @Component({
   selector: 'app-sign-in',
-  imports: [SharedModule, AnimateOnScrollDirective, VanillaTiltDirective],
+  imports: [SharedModule, AnimateOnScrollDirective, VanillaTiltDirective, RouterModule],
   templateUrl: './sign-in.component.html',
   styleUrls: ['./sign-in.component.scss'],
 })

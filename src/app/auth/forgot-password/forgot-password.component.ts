@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { SharedModule } from '../../shared/shared.module';
 import { Observable, of } from 'rxjs';
 import { BaseForm } from '../../shared/forms/base-form.class';
@@ -10,7 +10,7 @@ import { VanillaTiltDirective } from '../../directives/vanilla-tilt/vanilla-tilt
 
 @Component({
   selector: 'app-forgot-password',
-  imports: [SharedModule, AnimateOnScrollDirective, VanillaTiltDirective],
+  imports: [SharedModule, AnimateOnScrollDirective, VanillaTiltDirective, RouterModule],
   templateUrl: './forgot-password.component.html',
   styleUrls: ['./forgot-password.component.scss'],
 })
